@@ -4,4 +4,18 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android) apply false
     id("com.google.devtools.ksp") version "1.9.10-1.0.13" apply false
     id ("com.google.dagger.hilt.android") version "2.48.1" apply false
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1" apply false
+}
+
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    buildscript {
+        dependencies {
+            classpath("com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1")
+        }
+    }
 }
