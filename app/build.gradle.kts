@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.Auty.Auty"
-        minSdk = 29
+        minSdk = 30
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -47,6 +47,12 @@ android {
         exclude ("META-INF/notice.txt")
         exclude ("META-INF/ASL2.0")
         exclude ("META-INF/INDEX.LIST")
+    }
+
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -164,6 +170,14 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
 
+    // To use RoleManagerCompat
+    implementation("androidx.core:core-role:1.0.0")
+
+    // To use the Animator APIs
+    implementation("androidx.core:core-animation:1.0.0-beta01")
+
+    // To use the
+    implementation("androidx.core:core-splashscreen:1.0.0")
 
 
 
