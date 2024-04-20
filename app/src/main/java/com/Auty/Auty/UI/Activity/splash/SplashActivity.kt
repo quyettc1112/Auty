@@ -57,7 +57,7 @@ class SplashActivity : BaseActivity() {
                 TokenManager.saveFirstStart(this)
                 finish()
             } else {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, StartActivity::class.java)
                 startActivity(intent)
                 finish()
             }
