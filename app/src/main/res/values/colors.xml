@@ -69,4 +69,6 @@
 
     <color name="bluePrimary">#17A4FE</color>
     <color name="blueLightPrimary">#F2FBFF</color>
+    <color name="blueLightBackground">#F2FBFF</color>
+
 </resources>

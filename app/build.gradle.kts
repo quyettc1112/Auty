@@ -179,6 +179,12 @@ dependencies {
     // To use the
     implementation("androidx.core:core-splashscreen:1.0.0")
 
+    // ViewPager 2
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    // Material Design
+
+
 
 
 }
