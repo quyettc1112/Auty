@@ -26,7 +26,6 @@ open class BaseActivity : AppCompatActivity() {
         cancelable: Boolean = true,
         cancelListener: ((DialogInterface) -> Unit) = {}
     ) {
-
         progressDialog = ProgressDialog(this)
         progressDialog?.setTitle(title)
         progressDialog?.setMessage(message)
