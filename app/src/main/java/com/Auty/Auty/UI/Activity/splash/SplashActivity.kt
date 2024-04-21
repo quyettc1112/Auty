@@ -25,7 +25,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class SplashActivity : BaseActivity() {
     private lateinit var binding: ActivitySplashBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
