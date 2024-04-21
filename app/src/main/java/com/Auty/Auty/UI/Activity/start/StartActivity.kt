@@ -1,8 +1,11 @@
 package com.Auty.Auty.UI.Activity.start
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.view.WindowManager
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
@@ -15,6 +18,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.Auty.Auty.AppConfig.BaseConfig.BaseActivity
 import com.Auty.Auty.Common.IntroSliderAdapter
 import com.Auty.Auty.R
+import com.Auty.Auty.UI.Activity.main.MainActivity
 import com.Auty.Auty.databinding.ActivityStartBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,6 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class StartActivity : BaseActivity() {
 
     private lateinit var binding: ActivityStartBinding
+    private var currentPage = 0
     private val introSliderAdapter = IntroSliderAdapter(
         listOf(
             IntroSliderAdapter.IntroSlide(
@@ -42,7 +47,7 @@ class StartActivity : BaseActivity() {
                 image = R.drawable.image_splash3,
                 imageDecor = R.drawable.image_decor_rm_bg
             )
-        )
+        ), this
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,13 +70,14 @@ class StartActivity : BaseActivity() {
 
     private fun clickButtonNext() {
         binding.btnNext.setOnClickListener {
-            if (binding.introSliderViewpager.currentItem + 1 < introSliderAdapter.itemCount) {
+            if (binding.introSliderViewpager.currentItem + 1  < introSliderAdapter.itemCount) {
                 binding.introSliderViewpager.currentItem += 1
             } else {
-                binding.introSliderViewpager.currentItem = 0
+                Intent(this, MainActivity::class.java).also {
+                    startActivity(it)
+                }
             }
         }
-
     }
     private fun callEventChangeViewPager() {
         binding.introSliderViewpager.registerOnPageChangeCallback(object :
