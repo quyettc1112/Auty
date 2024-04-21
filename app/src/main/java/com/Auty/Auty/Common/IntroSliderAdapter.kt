@@ -32,7 +32,6 @@ class IntroSliderAdapter(private val introSlides: List<IntroSlide>,private val c
                 it.setImageResource(introSlide.imageDecor)
                 it.startAnimation(bottomAnimation)
             }
-
         }
         fun animation() {
 
