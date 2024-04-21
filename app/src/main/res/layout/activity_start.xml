@@ -29,8 +29,6 @@
 
     </LinearLayout>
 
-    
-    
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
