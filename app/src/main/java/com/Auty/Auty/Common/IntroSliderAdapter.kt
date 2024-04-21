@@ -1,17 +1,21 @@
 package com.Auty.Auty.Common
 
+import android.content.Context
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.Auty.Auty.R
 
-class IntroSliderAdapter(private val introSlides: List<IntroSlide>) :
+class IntroSliderAdapter(private val introSlides: List<IntroSlide>,private val context: Context) :
     RecyclerView.Adapter<IntroSliderAdapter.IntroSliderViewHolder>() {
     inner class IntroSliderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val topAnimation = AnimationUtils.loadAnimation(context, R.anim.top_animation)
+        val bottomAnimation = AnimationUtils.loadAnimation(context, R.anim.bottom_animation)
         private val textTitle = view.findViewById<TextView>(R.id.intro_title)
         private val textDescription = view.findViewById<TextView>(R.id.intro_description)
         private val image = view.findViewById<ImageView>(R.id.intro_image)
@@ -20,11 +24,21 @@ class IntroSliderAdapter(private val introSlides: List<IntroSlide>) :
         fun bind(introSlide: IntroSlide) {
             textTitle.text = introSlide.title
             textDescription.text = introSlide.description
-            image.setImageResource(introSlide.image)
-            imageDecor.setImageResource(introSlide.imageDecor)
+            image.let {
+                it.setImageResource(introSlide.image)
+                it.startAnimation(topAnimation)
+            }
+            imageDecor.let {
+                it.setImageResource(introSlide.imageDecor)
+                it.startAnimation(bottomAnimation)
+            }
+
+        }
+        fun animation() {
+
+
         }
     }
-
 
     data class IntroSlide (
         val title: String,
@@ -50,5 +64,6 @@ class IntroSliderAdapter(private val introSlides: List<IntroSlide>) :
 
     override fun onBindViewHolder(holder: IntroSliderViewHolder, position: Int) {
         holder.bind(introSlides[position])
+        holder.animation()
     }
 }
