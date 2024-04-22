@@ -26,7 +26,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class StartActivity : BaseActivity() {
 
     private lateinit var binding: ActivityStartBinding
-    private var currentPage = 0
     private val introSliderAdapter = IntroSliderAdapter(
         listOf(
             IntroSliderAdapter.IntroSlide(
