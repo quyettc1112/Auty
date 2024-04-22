@@ -127,6 +127,8 @@ open class BaseActivity : AppCompatActivity() {
     }
 
 
+
+
     /*open fun showLoginDialog(context: Context, activity: Activity, navId: Int) {
         val dialogBinding = layoutInflater.inflate(R.layout.dialog_login, null)
         val myDialog = Dialog(context)
