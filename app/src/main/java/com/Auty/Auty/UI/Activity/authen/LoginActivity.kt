@@ -2,6 +2,7 @@ package com.Auty.Auty.UI.Activity.authen
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,6 +27,7 @@ class LoginActivity : BaseActivity() {
             insets
         }
         clickLoginButton()
+        setAnimation()
     }
 
     private fun clickLoginButton() {
@@ -34,12 +36,20 @@ class LoginActivity : BaseActivity() {
                 startActivity(this)
             }
         }
-
-
         binding.btnRegister.setOnClickListener {
             Intent(this, RegisterActivity::class.java).apply {
                 startActivity(this)
             }
         }
     }
+
+    private fun setAnimation() {
+        val topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation)
+        val bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
+        binding.imageLogin.startAnimation(topAnimation)
+        binding.imageContent.startAnimation(bottomAnimation)
+
+    }
+
+
 }
