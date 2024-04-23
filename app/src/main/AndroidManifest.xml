@@ -13,10 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Auty"
         tools:targetApi="31">
-        <activity
-            android:name=".UI.Activity.main.TestActivity"
-            android:exported="true"
-            android:label="@string/title_activity_test" />
+
+
         <activity
             android:name=".UI.Activity.authen.LoginActivityScreen2"
             android:exported="false" />
