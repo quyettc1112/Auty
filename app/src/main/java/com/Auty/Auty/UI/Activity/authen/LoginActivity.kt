@@ -14,7 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginActivity : BaseActivity() {
-
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +41,6 @@ class LoginActivity : BaseActivity() {
             }
         }
     }
-
     private fun setAnimation() {
         val topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation)
         val bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
