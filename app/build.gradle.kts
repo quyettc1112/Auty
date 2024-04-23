@@ -185,8 +185,6 @@ dependencies {
     // Lottie
     implementation ("com.airbnb.android:lottie:4.2.0")
 
-    // Bottom av vavigation
-    implementation ("com.github.ibrahimsn98:NiceBottomBar:2.2")
 
 
 
