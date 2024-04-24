@@ -27,11 +27,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        binding.btnLogin.setOnClickListener {
-            Intent(requireActivity(), LoginActivity::class.java).also {
-                startActivity(it)
-            }
-        }
+
 
         return binding.root
     }
