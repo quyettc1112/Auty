@@ -74,6 +74,7 @@ class StartActivity : BaseActivity() {
             } else {
                 Intent(this, MainActivity::class.java).also {
                     startActivity(it)
+                    finish()
                 }
             }
         }
