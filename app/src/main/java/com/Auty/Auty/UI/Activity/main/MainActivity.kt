@@ -40,6 +40,7 @@ class MainActivity : BaseActivity() {
 
         FragmentAdapter = FragmentAdapter(this, listFragment)
         binding.vp2Main.adapter = FragmentAdapter
+        binding.vp2Main.isUserInputEnabled = false
         binding.vp2Main.offscreenPageLimit = 4
 
         // Settup change listener
