@@ -8,6 +8,15 @@
     tools:context=".UI.Activity.main.MainActivity">
 
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </androidx.viewpager2.widget.ViewPager2>
+
+
+
 
 
     <androidx.cardview.widget.CardView
@@ -16,9 +25,11 @@
         app:cardCornerRadius="15dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginBottom="45dp"
+        android:translationZ="10dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent">
        <com.Auty.Auty.AppConfig.BottomNavCustom.NiceBottomBar
+           android:id="@+id/nice_bottom_nav"
            android:paddingTop="10dp"
            android:layout_width="match_parent"
            app:menu="@menu/menu"
