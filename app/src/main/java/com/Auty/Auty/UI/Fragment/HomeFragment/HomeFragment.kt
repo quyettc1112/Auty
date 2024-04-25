@@ -62,6 +62,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         setUpSliderCourseRecomend()
         onPageChangeCallBack()
+        onItemCourseRecClick()
         return binding.root
     }
     private fun onPageChangeCallBack() {
@@ -96,6 +97,15 @@ class HomeFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        handler.postDelayed(runnable, 4000)
+        //handler.postDelayed(runnable, 4000)
+    }
+
+    private fun onItemCourseRecClick() {
+        courseRecomendAdapter.onItemClick = {
+            Intent(requireActivity(), LoginActivity::class.java).also {
+                startActivity(it)
+            }
+
+        }
     }
 }

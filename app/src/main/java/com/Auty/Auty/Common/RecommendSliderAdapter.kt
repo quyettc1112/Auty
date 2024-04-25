@@ -13,6 +13,7 @@ import org.w3c.dom.Text
 class RecommendSliderAdapter(private val courseRecomment: List<CourseRecomment>):
     RecyclerView.Adapter<RecommendSliderAdapter.RecommendSliderHolder>()
 {
+
     inner class RecommendSliderHolder(view: View): RecyclerView.ViewHolder(view) {
         private val title = view.findViewById<TextView>(R.id.tv_course_title)
         private val image = view.findViewById<ImageView>(R.id.iv_course_recommend)
@@ -26,6 +27,7 @@ class RecommendSliderAdapter(private val courseRecomment: List<CourseRecomment>)
         }
 
     }
+    var onItemClick: ((CourseRecomment  ) -> Unit)? = null
 
     data class CourseRecomment (
         val title: String,
@@ -46,6 +48,9 @@ class RecommendSliderAdapter(private val courseRecomment: List<CourseRecomment>)
 
     override fun onBindViewHolder(holder: RecommendSliderHolder, position: Int) {
         holder.bind(courseRecomment[position])
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(courseRecomment[position])
+        }
 
     }
 
