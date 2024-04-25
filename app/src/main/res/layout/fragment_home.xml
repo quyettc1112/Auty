@@ -210,12 +210,14 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:orientation="horizontal"
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:layout_editor_absoluteX="0dp">
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -228,27 +230,29 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
             app:layout_constraintVertical_bias="0.0">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
 
-                android:layout_marginEnd="13dp"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginEnd="13dp">
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView_book"
                     android:layout_width="65dp"
@@ -257,33 +261,35 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
+
                     <ImageView
-                        android:padding="13dp"
-                        android:src="@drawable/ic_home_book"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:padding="13dp"
+                        android:src="@drawable/ic_home_book">
 
                     </ImageView>
                 </androidx.cardview.widget.CardView>
+
                 <TextView
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Info"
-                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/app_font_medium"
+                    android:text="Thông Tin"
+                    android:textSize="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView_book">
-                </TextView>
+                    app:layout_constraintTop_toBottomOf="@+id/cardView_book"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp">
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView_info"
                     android:layout_width="65dp"
@@ -301,26 +307,26 @@
 
                     </ImageView>
                 </androidx.cardview.widget.CardView>
+
                 <TextView
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Survey"
-                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/app_font_medium"
+                    android:text="Khảo Sát"
+                    android:textSize="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView_info">
-                </TextView>
+                    app:layout_constraintTop_toBottomOf="@+id/cardView_info"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp">
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView_progress"
                     android:layout_width="65dp"
@@ -338,25 +344,26 @@
 
                     </ImageView>
                 </androidx.cardview.widget.CardView>
+
                 <TextView
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Progress"
-                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/app_font_medium"
+                    android:text="Tiến Trình"
+                    android:textSize="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView_progress">
-                </TextView>
+                    app:layout_constraintTop_toBottomOf="@+id/cardView_progress"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_marginStart="13dp"
-
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+
+                android:layout_height="match_parent"
+                android:layout_marginStart="13dp">
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView_tryout"
                     android:layout_width="65dp"
@@ -374,21 +381,66 @@
 
                     </ImageView>
                 </androidx.cardview.widget.CardView>
+
                 <TextView
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Try Out"
-                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/app_font_medium"
+                    android:text="Khám Phá"
+                    android:textSize="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView_tryout">
-                </TextView>
+                    app:layout_constraintTop_toBottomOf="@+id/cardView_tryout"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:gravity="left"
+            android:text="Đề xuất cho bạn"
+            android:textColor="@color/bluePrimary"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:text="Xem thêm"
+            android:textColor="@color/bluePrimary"
+            android:textSize="11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerCourseRecomend"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
