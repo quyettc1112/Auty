@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.Auty.Auty.AppConfig.Constant.Constant
+import com.Auty.Auty.Common.CourseMainAdapter
 import com.Auty.Auty.Common.RecommendSliderAdapter
 import com.Auty.Auty.R
 import com.Auty.Auty.UI.Activity.authen.LoginActivity
@@ -50,9 +52,12 @@ class HomeFragment : Fragment() {
         )
     )
 
+    private lateinit var courseMainAdapter: CourseMainAdapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        courseMainAdapter = CourseMainAdapter(Constant.getListCourse())
     }
 
     override fun onCreateView(
@@ -61,6 +66,7 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         setUpSliderCourseRecomend()
+        setUpCourseMainRecycleView()
         onPageChangeCallBack()
         onItemCourseRecClick()
         return binding.root
@@ -97,9 +103,8 @@ class HomeFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        //handler.postDelayed(runnable, 4000)
+        handler.postDelayed(runnable, 4000)
     }
-
     private fun onItemCourseRecClick() {
         courseRecomendAdapter.onItemClick = {
             Intent(requireActivity(), LoginActivity::class.java).also {
@@ -107,5 +112,9 @@ class HomeFragment : Fragment() {
             }
 
         }
+    }
+
+    private fun setUpCourseMainRecycleView(){
+        binding.rvCourse.adapter = courseMainAdapter
     }
 }
